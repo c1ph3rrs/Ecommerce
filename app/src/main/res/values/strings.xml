@@ -1,0 +1,418 @@
+<resources>
+    <string name="app_name">IB Express</string>
+    <string name="front_name">IB EXPRESS</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_to_ib_express">Welcome to IB Express</string>
+
+    <string name="poweredBy">Ibrahim Akram Mughal (Ciphers Corporation)</string>
+
+    <string name="nextBtn">Next</string>
+
+
+    <!--  Retailer Strings   -->
+    <string name="login">Login</string>
+    <string name="retailer_description">Here you can buy any thing with just one click</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="remember_me">Remember Me</string>
+
+    <!--  General Manuals   -->
+
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="seller_shop_category">Category</string>
+    <string name="enter_confirm_password">Confirm Password</string>
+    <string name="enter_full_name">Enter Full Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_phone_no">Enter Phone No</string>
+    <string name="shop_image">Shop Profile</string>
+    <string name="click_here">Click Here</string>
+    <string name="shop_document">Shop Document (Cash Memo)</string>
+    <string name="shop_document_btn">Shop Document</string>
+    <string name="shop_owner_id_front">Owner ID card front</string>
+    <string name="shop_owner_id_back">Owner ID card back</string>
+    <string name="shop_visiting_card">Visiting Card</string>
+    <string name="shop_address">Shop Address</string>
+    <string name="submit">Submit Data</string>
+    <string name="shop_licence">Licence ( put 0 if you don\'t have )</string>
+    <string name="seller_pending_status_txt">Thanks for your Patience. It takes ( 3-5 ) Business Days. Please visit on your provided email regularly.
+        Our Staff will inform you when your account is approved. If we need any other document our Staff will inform you in your email.
+        I hope you can understand our Privacy &amp; Policy. Thanks
+    </string>
+    <string name="approve_seller">Approve Seller</string>
+    <string name="modification_request">Modification Request</string>
+    <string name="disable_seller">Disable Seller</string>
+    <string name="mail_title">Title</string>
+    <string name="mail_body">Body</string>
+    <string name="submit_your_response">Submit Response</string>
+
+
+    <!--  OTP PAGE   -->
+
+    <string name="otp_code_text">Co\nde</string>
+    <string name="otp_verification_text">Verification</string>
+    <string name="otp_description_text">Please wait while we sent OTP code on this number. </string>
+    <string name="verify">Verify</string>
+    <string name="dummy_number">Dummy Number</string>
+    <string name="resend_code">Resend Code</string>
+
+    <!--  Add categories Portion   -->
+
+    <string name="add_new_product">Add New Products</string>
+    <string name="category_product_name">Enter Product Name</string>
+    <string name="category_product_description">Enter Product Description</string>
+    <string name="category_product_price">Enter Product Price</string>
+
+    <!--  Admin Menu  -->
+    <string name="admin_menu_maintenance">Maintenance</string>
+    <string name="admin_sellers">New Sellers</string>
+    <string name="admin_sellers_request">Sellers Request</string>
+
+    <!--  Navigation Drawer Menu  -->
+    <string name="username">Username</string>
+    <string name="fullName">Full Name</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="orders">Orders</string>
+    <string name="categories">Categories</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+
+    <!--  card View  -->
+
+    <string name="cv_item_description">Product description</string>
+
+
+    <!--  Settings Activity Data  -->
+    <string name="settings_change_profile">Change Profile</string>
+    <string name="change_password">Change Password</string>
+
+    <!--  Product Detail  -->
+    <string name="product_detail">Product Detail</string>
+    <string name="product_detail_price">Price</string>
+    <string name="cart_name">Manage Cart Items</string>
+    <string name="total_price">Total Price : </string>
+    <string name="total_quantity">Total Qty</string>
+    <string name="total_price_number">0</string>
+
+    <!--    Confirm Orders-->
+    <string name="shipping_detail">Shipping Detail</string>
+    <string name="confirm_order">Confirm Your Order</string>
+    <string name="sender_name">Enter the sender name</string>
+    <string name="receiver_name">Enter the receiver name</string>
+    <string name="sender_phone">Enter the sender phone no</string>
+    <string name="receiver_phone">Enter the receiver phone no</string>
+    <string name="shipping_from">Shipping city from</string>
+    <string name="shipping_to">Shipping to this city</string>
+    <string name="shipping_address">Shipping the address</string>
+
+    <!--  Admin Panel  -->
+
+    <string name="admin_dashboard">Admin Dashboard</string>
+    <string name="new_orders">New Orders</string>
+    <string name="admin_orders_user_name">User Name</string>
+    <string name="admin_orders_phone_no">Phone No</string>
+    <string name="admin_orders_price">Total Price</string>
+    <string name="admin_orders_address">User Address</string>
+    <string name="admin_orders_date">Date : </string>
+    <string name="admin_orders_show_detail">Show Details </string>
+    <string name="apply_changes">Apply Changes </string>
+    <string name="add_new_categories">Add New Category </string>
+    <string name="add_categories">Add Category </string>
+    <string name="categories_name">Category Name</string>
+    <string name="add_product_to_special_offer">Special Offers</string>
+    <string name="add_product_to_collection">Deals</string>
+    <string name="add_product_maintenance">Product Maintenance</string>
+    <string name="add_new_admin">New Admin</string>
+    <string name="admin_shipping_detail">Add Shipping Detail</string>
+    <string name="admin_settings">Admin Settings</string>
+    <string name="admin_add_special_offers">Add Special Offers</string>
+    <string name="admin_view_special_offers">View Special Offers</string>
+    <string name="add_new_deal">Add New Deal</string>
+    <string name="view_deal_products">View Deals Products</string>
+    <string name="previous_page">Previous Page</string>
+    <string name="special_offer_detail">Special Offer Product Detail</string>
+    <string name="items_left">Items Left</string>
+    <string name="modify_product">Modify Product</string>
+    <string name="delivery_guy">Delivery Guy</string>
+    <string name="address">Address</string>
+    <string name="add_new_delivery_guy">Add New Delivery Guy</string>
+    <string name="add_product_category">Add Product Category</string>
+    <string name="product_category">View All Product Categories</string>
+    <string name="add_shop_category">Add Shop Category</string>
+    <string name="view_shop_category">View All Shop Category</string>
+    <string name="assign_order_to_delivery_guy">Assign Order for Delivery</string>
+    <string name="branch_code">00000</string>
+    <string name="shipping_id">Shipping ID</string>
+    <string name="tracking_id">Tracking ID</string>
+    <string name="add_record">Add Record</string>
+    <string name="set_current_location">Set Current Location</string>
+    <string name="seller_level">Seller Level</string>
+    <string name="receive_seller_order">Receive Sellers Orders</string>
+    <string name="city_to_city">City to City Delivery</string>
+    <string name="add_new_branch">Add New Branch</string>
+    <string name="view_all_branch">View all Branches</string>
+    <string name="branch_code_txt">Branch Code</string>
+    <string name="branch_password_txt">Branch Password</string>
+    <string name="branch_city_txt">Branch City</string>
+    <string name="branch_phone_txt">Branch Phone</string>
+    <string name="branch_address_txt">Branch Address</string>
+    <string name="branch_email_txt">Branch Email</string>
+    <string name="branch_dashboard">Branch Dashboard</string>
+    <string name="send_from">Send From</string>
+    <string name="send_to">Send To</string>
+    <string name="zero">0</string>
+    <string name="receive_other_branch_orders">Receive Other Branches Orders</string>
+    <string name="other_branches_orders">Other Branches Orders</string>
+    <string name="shipped_guy">Shipped Guy</string>
+    <string name="branch_delivered_order">Branch Delivered Orders</string>
+    <string name="complete_this_order">Complete this Order</string>
+    <string name="download_pdf">Download Pdf</string>
+    <string name="insert_challan_picture">Insert Bank Challan Picture</string>
+    <string name="logout_from_this_branch">Logout From this Branch</string>
+    <string name="cancel_order">Cancel this Order</string>
+    <string name="buyer_username">Buyer Username</string>
+    <string name="delivery_guy_username">Delivery Guy Username</string>
+    <string name="return_to">Return to</string>
+    <string name="return_from">Return from</string>
+    <string name="branch_payments">Branch Payments</string>
+    <string name="check">Check</string>
+    <string name="mark_as_checked">Mark as Checked</string>
+    <string name="seller_analytics">Seller Analytics</string>
+    <string name="total_earning">Total Earning</string>
+    <string name="available_balance">Available Balance</string>
+    <string name="ratting">Ratting</string>
+    <string name="completed_orders">Completed Orders</string>
+    <string name="active_orders">Active Orders</string>
+    <string name="online_payments">Online Payments</string>
+    <string name="jazz_cash">Jazz Cash</string>
+    <string name="pay_with_jazz_cash">Pay with Jazz Cash</string>
+    <string name="easy_paisa">Easypaisa</string>
+    <string name="online_payment_desc">Now you can purchase any thing from our app. You can easily pay your online payments by using Jazz Cash
+    &amp; Easy paisa. You can totally relay on this payments methods. You can safely pay your payments easily.</string>
+    <string name="withdraw_balance">Withdraw Balance</string>
+
+    <string name="forget_password">Forget Password.?</string>
+    <string name="help_login">Help Login</string>
+    <string name="trouble_login">Trouble Logging In?</string>
+    <string name="forget_one_description">Enter your username and we\'ll send you a link to get back into your account.</string>
+    <string name="send_code">Send Code</string>
+
+
+    <!--  Search Product  -->
+
+    <string name="others_products">Others Products </string>
+
+    <!--  Seller Account Info  -->
+    <string name="seller_name">Seller Name</string>
+    <string name="seller_username">Seller Username</string>
+    <string name="seller_shop_name">Seller Shop Name</string>
+    <string name="seller_shop_email">Seller Shop Email</string>
+    <string name="seller_shop_location">Seller Shop Location</string>
+    <string name="seller_shop_phone_one">Seller Shop Phone 1</string>
+    <string name="seller_identity">Seller Cnic</string>
+    <string name="seller_password">Seller Password</string>
+    <string name="seller_dashboard">Seller Dashboard</string>
+    <string name="seller_new_product">Add Product</string>
+    <string name="seller_deliver_order">Deliver Order</string>
+    <string name="seller_earnings">Earnings</string>
+    <string name="seller_view_products">View Products</string>
+    <string name="seller_logout">Logout Seller</string>
+
+    <!--  Others Data  -->
+
+    <string name="offers_label">-------Offers Types-------</string>
+    <string name="post_label">-------Product Types-------</string>
+    <string name="orders_label">-------Orders Info-------</string>
+    <string name="earnings_info">-------Earnings Info-------</string>
+    <string name="settings_label">-------Settings-------</string>
+
+    <string name="image_one">Image 1</string>
+    <string name="image_two">Image 2</string>
+    <string name="image_three">Image 3</string>
+    <string name="image_four">Image 4</string>
+    <string name="add_special_offer">Add Special Offer</string>
+    <string name="delete_special_offer">Delete Special Offer</string>
+
+    <!--  Special Offers  -->
+    <string name="view_special_offers_name">Special Offer Product Name</string>
+    <string name="view_special_offers_id">Special Offer Product ID</string>
+    <string name="view_special_offers_detail">Special Offer Details</string>
+    <string name="view_special_offers_price_lbl">0</string>
+    <string name="view_all">SEE MORE</string>
+
+    <string name="buyer_dashboard_nav">Home</string>
+    <string name="buyer_search_nav">Search</string>
+    <string name="buyer_profile_nav">Profile</string>
+    <string name="buyer_notification_nav">Notification</string>
+    <string name="cart_date">Dec 10, 2020</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="shipping_price">Shipping Charges</string>
+    <string name="placed_and_pay">Places &amp; Pay </string>
+    <string name="placed_order">Placed Order</string>
+    <string name="after_order_placed_text">Your Order Has been Placed Soon it will be Delivered</string>
+    <string name="after_order_placed_button_text">Go to Home</string>
+    <string name="in_progress">In Progress</string>
+    <string name="completed">Completed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="proceed_further">Proceed More</string>
+    <string name="total_cart_items">Total Cart Items</string>
+    <string name="empty_cart">There is no item in cart.</string>
+    <string name="empty_pending_orders">There is no item in Pending.</string>
+    <string name="empty_delivered_orders">There is no item.</string>
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="message">Message</string>
+    <string name="earning">Earnings</string>
+    <string name="linked_accounts">Linked Accounts</string>
+
+
+    <!--  Seller Navigation  -->
+
+    <string name="seller_dashboards">Dashboard</string>
+    <string name="seller_notification">Notifications</string>
+    <string name="seller_orders">Orders</string>
+    <string name="seller_messages">Messages</string>
+    <string name="seller_profile">Profile</string>
+
+    <!--  Seller Orders Detail  -->
+
+    <string name="seller_order_shipping_id_txt">Shipping ID</string>
+    <string name="seller_order_shipping_id">CCSI-abcdefghijklmno</string>
+
+    <string name="seller_order_tracking_id_txt">Tracker ID</string>
+    <string name="seller_order_tracking_id">CCODIdefghijklabc</string>
+    <string name="payment_type">Payment Type</string>
+    <string name="online_payment">Online</string>
+    <string name="cod_payment">COD</string>
+    <string name="order_buyer_name">Buyer Name</string>
+    <string name="product_type">Product Type</string>
+    <string name="order_detail">Order Details</string>
+    <string name="buyer_analytics">Buyer Analytics</string>
+    <string name="view_buyer_analytics">View Buyer Analytics</string>
+    <string name="total_buying">Total Buying</string>
+    <string name="buyer_level">Buyer Level</string>
+    <string name="total_orders">Total Orders</string>
+    <string name="overall_ratting">Over All Ratting</string>
+    <string name="buyer_total_purchases">Total Purchases</string>
+    <string name="for_level_one">For Level One</string>
+    <string name="for_level_two">For Level Two</string>
+    <string name="for_top_buyer">For Top Buyer</string>
+
+    <string name="level_one_ratting">3.5</string>
+    <string name="level_two_ratting">3.9</string>
+    <string name="level_top_ratting">4.0</string>
+
+    <string name="level_one_orders">15</string>
+    <string name="level_two_orders">50</string>
+    <string name="level_top_orders">100</string>
+
+    <string name="level_one_buying">10000</string>
+    <string name="level_two_buying">30000</string>
+    <string name="level_top_buying">60000</string>
+
+    <string name="find_buyers">Find Buyers</string>
+    <string name="find_buyer_description">This will allow seller to search nearby Buyers to sell his products. IF you allow then any
+    new Sellers or Old Sellers can find near by buyers, and they send request to you to purchase something. If this will be of then no
+        seller would find your account for this request. Please enable location first to allow find location.
+    </string>
+
+    <string name="find_buyer_search_finished">Search Complete</string>
+    <string name="view_search_buyer">View Search Record</string>
+
+    <string name="current_level">Current Position</string>
+
+    <string name="product_title">Product Title</string>
+    <string name="product_qty">Product Qty</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_buyer">Product Buyer</string>
+    <string name="product_total">Product Title</string>
+    <string name="exe">x</string>
+    <string name="buyer_info">Buyer Info</string>
+    <string name="sender_name_lbl">Sender Name</string>
+    <string name="sender_city_lbl">Sender City</string>
+    <string name="receiver_city_lbl">Receiver City</string>
+    <string name="accept_and_continue_order">Accept &amp; Continue</string>
+    <string name="reject_order">Reject Order</string>
+    <string name="message_for_reject_order">Reason for Rejection</string>
+    <string name="deliver_order">Delivered Order</string>
+    <string name="ready_for_shipping">Ready for Shipping</string>
+    <string name="order_received">Received &amp; finished</string>
+    <string name="delivery_ratting_text">How was your delivery. Share your thoughts</string>
+    <string name="share_your_response">Share your Response</string>
+
+    <string name="notification_title">Notification Title</string>
+    <string name="notification_description">Notification Description</string>
+    <string name="notification_time">10-02-2021</string>
+
+    <string name="buyer_review"> Buyer Review </string>
+    <string name="seller_review"> Seller Review </string>
+    <string name="seller_review_desc">It will be automatically displayed when seller gives you review back</string>
+    <string name="date">00-01-0001</string>
+    <string name="seller_review_to_buyer">Please add review for buyer</string>
+    <string name="share_response">Share Response</string>
+
+    <!--  Categories Names  -->
+
+    <string name="electronics_devices">Electronics Devices</string>
+    <string name="electronics_accessories">Electronics Accessories</string>
+    <string name="tv_and_home_appliances">TV &amp; Home Appliances</string>
+    <string name="health_and_beauty">Health &amp; Beauty</string>
+    <string name="babies_and_toys">Babies &amp; Toys</string>
+    <string name="groceries_and_pets">Groceries &amp; Pets</string>
+    <string name="home_and_life_style">Home &amp; Life Style</string>
+    <string name="women_fashion">Women\'s Fashions</string>
+    <string name="men_fashion">Men\'s Fashions</string>
+    <string name="watches_bags_jewelery">Watches Bags &amp; Jewelery</string>
+    <string name="sports_outdoor">Sports &amp; Outdoor</string>
+    <string name="automotive_motorbike">Automotive &amp; Motors</string>
+    <string name="our_products_desc">Our best Seller\'s Products are : </string>
+    <string name="main_category">Main Category</string>
+    <string name="sub_category">Sub Category</string>
+    <string name="load_sub_categories">Load Sub Categories</string>
+    <string name="sub_category_iv_desc">Please upload image only if it is a Third category</string>
+    <string name="category_point_one">If Main Category then add Category text and press Add</string>
+    <string name="category_point_two">If Sub Category select man category and add category text and press Add</string>
+    <string name="category_point_three">If Third load second sub category and add category text and press Add</string>
+    <string name="category_point_four">If shop category then add category text and press Add</string>
+    <string name="load_third_category">Load Third Category</string>
+    <string name="third_category">Third Category</string>
+    <string name="recently_added_products">Recently Added Products</string>
+    <string name="search_by_product_name">Search with product Name</string>
+    <string name="search_product_by_category_name">Search Product with Category Name</string>
+    <string name="search_seller_shop">Search Seller Shop</string>
+    <string name="seller_shop_phone_no">Contact</string>
+    <string name="seller_shop_email_txt">Email</string>
+    <string name="seller_shop_address">Seller Shop Address</string>
+    <string name="join_date">Member since</string>
+
+    <string name="empty_review">No Review</string>
+    <string name="wish_list">Wish List</string>
+
+    <string name="send_email_forget">We sent an email on your provided address to get back into your account.</string>
+    <string name="new_password">New Password</string>
+    <string name="recover_password">Recover Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="recover_password_description">Here you can enter new Password and confirm Password. Password must be at least 8 characters.</string>
+    <string name="update_record">Update Record</string>
+    <string name="view_seller_profile">View Seller Profile</string>
+    <string name="seller_other_products">Seller Other Products</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="withdraw">Withdraw Amount</string>
+    <string name="minimum_withdraw_amount">Minimum Withdraw Amount is : 5000</string>
+    <string name="account_number">Account Number</string>
+    <string name="account_bank_name">Account Bank Name</string>
+    <string name="withdraw_now">Withdraw Balance</string>
+    <string name="view_previous_record">View Previous Record</string>
+    <string name="view_all_record">View all</string>
+    <string name="payment_request">Payment Request</string>
+    <string name="payment_detail">Payment Detail</string>
+    <string name="approve_payment_request">Approve Payment</string>
+    <string name="decline_payment">Decline Payment</string>
+    <string name="transaction_id">Transaction ID </string>
+
+</resources>

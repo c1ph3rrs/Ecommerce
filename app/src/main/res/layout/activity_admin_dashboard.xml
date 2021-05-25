@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Admin.AdminDashboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/lightGrey">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo"
+                android:gravity="center"
+                android:text="@string/admin_dashboard"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:elevation="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_add_new_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/new_category" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_add_new_category"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/add_product_category"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:elevation="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_categories_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/product_categories" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/admin_categories_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/product_category"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:elevation="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_add_new_shop_category_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/shop_category" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_add_new_shop_category_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/add_shop_category"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:elevation="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_view_all_shop_categories_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/view_shop" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/admin_view_all_shop_categories_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/view_shop_category"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:elevation="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_add_new_branch_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/shop_category" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_add_new_branch_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/add_new_branch"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:elevation="5dp"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_view_all_branches"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/view_shop" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/admin_view_all_branches"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/view_all_branch"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_add_new_admin_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/add_new_admin_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_add_new_admin_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/add_new_admin"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_new_sellers_requests_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/person_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_new_sellers_requests_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/baloo"
+                            android:gravity="center_horizontal"
+                            android:text="@string/admin_sellers_request"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_branch_payments_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/branch_payments_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_branch_payments_btn"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/baloo"
+                            android:gravity="center_horizontal"
+                            android:text="@string/branch_payments"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/admin_category_layout_border"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/admin_view_seller_payment_request_iv"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:src="@drawable/branch_payments_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/admin_view_seller_payment_request_iv"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/muli_black"
+                            android:gravity="center_horizontal"
+                            android:text="@string/payment_request"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/admin_logout_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/black"
+                    android:text="@string/logout"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

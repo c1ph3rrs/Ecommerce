@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Branch.BranchOrderDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/branch_order_detail_back_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_detail"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/baloo"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/branch_order_product_detail_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/branch_order_image"
+                            android:layout_width="170dp"
+                            android:layout_height="110dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/cart_icon" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:id="@+id/branch_order_product_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/baloo"
+                            android:singleLine="true"
+                            android:text="@string/product_title"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/branch_order_product_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/branch_order_product_title"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/baloo"
+                            android:singleLine="true"
+                            android:text="@string/product_price"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/product_multiply_symbol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/branch_order_product_title"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/branch_order_product_price"
+                            android:fontFamily="@font/baloo"
+                            android:text="@string/exe"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/branch_order_product_qty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/branch_order_product_title"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/product_multiply_symbol"
+                            android:fontFamily="@font/baloo"
+                            android:text="@string/product_qty"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:id="@+id/branch_order_detail_product_info_divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/branch_order_product_price"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/DimGray" />
+
+                        <TextView
+                            android:id="@+id/branch_order_total_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/branch_order_detail_product_info_divider"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/baloo"
+                            android:text="@string/product_price"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:id="@+id/branch_order_detail_product_info_divider_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/branch_order_total_price"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/DimGray" />
+
+                        <TextView
+                            android:id="@+id/branch_order_buyer_name_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/branch_order_detail_product_info_divider_two"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/baloo"
+                            android:text="@string/order_buyer_name"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/branch_order_payment_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/branch_order_detail_product_info_divider_two"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/baloo"
+                            android:text="@string/payment_type"
+                            android:textSize="14sp" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/branch_order_detail_product_info_divider_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/branch_order_product_detail_layout"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/DimGray" />
+
+                <TextView
+                    android:id="@+id/branch_order_buyer_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_detail_product_info_divider_three"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/buyer_info"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_shipping_id_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_buyer_info_label"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/seller_order_shipping_id"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_tracking_id_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_shipping_id_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/seller_order_shipping_id"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_sender_name_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_tracking_id_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/sender_name"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_receiver_name_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_sender_name_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/receiver_name"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_sender_city_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_receiver_name_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/sender_city_lbl"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_receiver_city_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_sender_city_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/receiver_city_lbl"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_sender_phone_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_receiver_city_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/sender_phone"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_receiver_phone_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_sender_phone_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/receiver_phone"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/branch_order_shipping_address_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch_order_receiver_phone_lbl"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="@string/shipping_address"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/branch_complete_order_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/complete_this_order"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_below="@id/branch_order_shipping_address_lbl"/>
+
+
+                <Button
+                    android:id="@+id/branch_download_pdf_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download_pdf"
+                    android:background="@color/colorPrimary"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_below="@id/branch_complete_order_btn"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

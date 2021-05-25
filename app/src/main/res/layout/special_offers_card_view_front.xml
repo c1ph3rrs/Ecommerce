@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="160dp"
+    android:layout_height="240dp"
+    android:layout_margin="5dp"
+    android:padding="15dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/special_offer_card_one_img"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/new_category" />
+
+            <TextView
+                android:id="@+id/special_offer_card_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/special_offer_card_one_img"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/nunito_light"
+                android:singleLine="true"
+                android:textColor="@color/orange"
+                android:text="@string/view_special_offers_name"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/special_offer_card_user_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/special_offer_card_name_txt"
+                android:ellipsize="end"
+                android:fontFamily="@font/nunito_light"
+                android:maxLines="1"
+                android:text="@string/seller_name"
+                android:textSize="10sp"/>
+
+            <View
+                android:id="@+id/product_divider_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/DimGray"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/special_offer_card_user_name_txt"
+                android:padding="7dp"/>
+
+
+            <TextView
+                android:id="@+id/special_offer_price_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorAccent"
+                android:text="@string/total_price"
+                android:layout_below="@id/product_divider_view"
+                android:textColor="@color/orange"
+                android:textSize="14sp"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+

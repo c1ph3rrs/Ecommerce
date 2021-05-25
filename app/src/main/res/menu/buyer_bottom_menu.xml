@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/buyer_bottom_nav_dashboard"
+        android:title="@string/buyer_dashboard_nav"
+        android:icon="@drawable/dashboard_icon"
+        app:cnb_backgroundColor="@color/colorPrimary" />
+
+    <item android:id="@+id/buyer_bottom_nav_search"
+        android:title="@string/buyer_search_nav"
+        android:icon="@drawable/search_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+    <item android:id="@+id/buyer_bottom_nav_cart"
+        android:title="@string/cart"
+        android:icon="@drawable/cart_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+    <item android:id="@+id/buyer_bottom_nav_notifications"
+        android:title="@string/buyer_notification_nav"
+        android:icon="@drawable/notification_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+    <item android:id="@+id/buyer_bottom_nav_user"
+        android:title="@string/buyer_profile_nav"
+        android:icon="@drawable/user_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+</menu>

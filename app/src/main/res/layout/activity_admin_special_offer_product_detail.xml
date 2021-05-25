@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Admin.AdminSpecialOfferProductDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/admin_special_offer_pro_detail_back_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/back_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/special_offer_detail"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/baloo"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/admin_category_layout_border"
+                    android:elevation="5dp"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/admin_special_offer_detail_one_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@drawable/new_category" />
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/admin_special_offer_detail_one_img"
+                        android:fontFamily="@font/muli_black"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        android:singleLine="true"
+                        android:text="@string/admin_view_special_offers"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_description_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/admin_special_offer_detail_name_txt"
+                        android:fontFamily="@font/muli_light"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/admin_view_special_offers"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_price_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_detail_price"
+                        android:layout_below="@+id/admin_special_offer_detail_description_txt"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_price_number_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_detail_price"
+                        android:layout_below="@+id/admin_special_offer_detail_description_txt"
+                        android:layout_toRightOf="@+id/admin_special_offer_detail_price_name_txt"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_quantity_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_quantity"
+                        android:layout_below="@+id/admin_special_offer_detail_price_name_txt"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_quantity_number_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_quantity"
+                        android:layout_below="@+id/admin_special_offer_detail_price_name_txt"
+                        android:layout_toRightOf="@+id/admin_special_offer_detail_quantity_name_txt"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_quantity_left_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/items_left"
+                        android:layout_below="@+id/admin_special_offer_detail_quantity_name_txt"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/admin_special_offer_detail_quantity_left_number_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/items_left"
+                        android:layout_below="@+id/admin_special_offer_detail_quantity_number_txt"
+                        android:layout_toRightOf="@+id/admin_special_offer_detail_quantity_name_txt"
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+
+                    <RatingBar
+                        android:id="@+id/special_offer_product_detail_ratting"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/admin_special_offer_detail_quantity_left_number_txt"
+                        android:paddingLeft="10dp"
+                        android:layout_centerInParent="true"
+                        android:rating="5" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/special_offer_detail_modify_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/modify_product"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:elevation="5dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

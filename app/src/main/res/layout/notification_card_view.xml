@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="1dp"
+    android:padding="15dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/notification_image_cv"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/cart_icon"/>
+
+        <View
+            android:id="@+id/notification_divider_cv"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/notification_image_cv"/>
+
+        <TextView
+            android:id="@+id/notification_title_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_title"
+            android:fontFamily="@font/baloo"
+            android:textSize="13sp"
+            android:layout_toRightOf="@+id/notification_divider_cv"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/notification_description_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_description"
+            android:fontFamily="@font/baloo"
+            android:textSize="12sp"
+            android:layout_toRightOf="@+id/notification_divider_cv"
+            android:layout_below="@+id/notification_title_cv"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="-5dp"/>
+
+        <TextView
+            android:id="@+id/notification_category_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_time"
+            android:layout_below="@id/notification_description_cv"
+            android:layout_toRightOf="@+id/notification_divider_cv"
+            android:textSize="11sp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/baloo"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:id="@+id/notification_date_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notification_time"
+            android:layout_below="@id/notification_description_cv"
+            android:layout_alignParentRight="true"
+            android:textSize="11sp"
+            android:layout_marginRight="5dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

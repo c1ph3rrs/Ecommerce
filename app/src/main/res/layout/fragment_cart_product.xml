@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Buyer.CartProductFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/cart_fragment_product_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/cart_header_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/cart_proceed_more_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/proceed_further"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:padding="10dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cart_header_layout"
+                android:padding="15dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/buyer_cart_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="410dp"
+                    android:orientation="vertical"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cart_product_recycler_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/cart_header_layout"
+                android:layout_marginTop="100dp">
+
+                <TextView
+                    android:id="@+id/empty_cart_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_cart"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/baloo"/>
+
+                <ImageView
+                    android:id="@+id/empty_cart_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/information_icon"
+                    android:layout_below="@+id/empty_cart_text"
+                    android:visibility="gone"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>

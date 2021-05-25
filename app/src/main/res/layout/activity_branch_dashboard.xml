@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Branch.BranchDashboardActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/home_background"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/branch_dashboard"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/branch_payments_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/total_price"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/admin_category_layout_border"
+                    android:elevation="5dp"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/branch_receive_seller_order_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/shop_category" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/branch_receive_seller_order_btn"
+                        android:text="@string/receive_seller_order"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/baloo"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/admin_category_layout_border"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/receive_other_branch_order_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/shipping_detail_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/receive_other_branch_order_iv"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/baloo"
+                        android:gravity="center_horizontal"
+                        android:text="@string/receive_other_branch_orders"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/admin_category_layout_border">
+
+                    <ImageView
+                        android:id="@+id/branch_insert_challan_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/add_items_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/branch_insert_challan_iv"
+                        android:text="@string/insert_challan_picture"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/baloo"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/admin_category_layout_border">
+
+                    <ImageView
+                        android:id="@+id/branch_delivered_order_for_delivery_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/shipping_detail_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/branch_delivered_order_for_delivery_btn"
+                        android:text="@string/branch_delivered_order"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/baloo"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/admin_category_layout_border"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/admin_add_delivery_guy_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/add_delivery_guy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/admin_add_delivery_guy_iv"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/baloo"
+                        android:gravity="center_horizontal"
+                        android:text="@string/add_new_delivery_guy"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/admin_category_layout_border"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/branch_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/logout_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/branch_logout"
+                        android:layout_centerInParent="true"
+                        android:text="@string/logout_from_this_branch"
+                        android:fontFamily="@font/baloo"
+                        android:textSize="16sp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/admin_category_layout_border"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/cancel_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/cancel_order_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cancel_order"
+                        android:layout_centerInParent="true"
+                        android:text="@string/cancel_order"
+                        android:fontFamily="@font/baloo"
+                        android:textSize="16sp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

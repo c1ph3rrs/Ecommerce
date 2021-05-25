@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="15dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/seller_request_image_cv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="7dp"
+            android:src="@drawable/profile" />
+
+        <View
+            android:id="@+id/seller_image_divider"
+            android:layout_width="1dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@+id/seller_request_image_cv"
+            android:background="@color/DimGray" />
+
+        <TextView
+            android:id="@+id/seller_request_name_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/seller_image_divider"
+            android:fontFamily="@font/baloo"
+            android:text="@string/seller_name"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/seller_request_shop_name_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seller_request_name_txt_cv"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/seller_image_divider"
+            android:fontFamily="@font/baloo"
+            android:text="@string/seller_shop_name"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/seller_request_username_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seller_request_shop_name_txt_cv"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/seller_image_divider"
+            android:fontFamily="@font/baloo"
+            android:text="@string/seller_username"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/seller_request_shop_category_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seller_request_username_txt_cv"
+            android:layout_toRightOf="@+id/seller_image_divider"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/seller_shop_category"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/seller_request_divider_two"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/seller_request_shop_category_txt_cv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/DimGray" />
+
+        <TextView
+            android:id="@+id/seller_request_email_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seller_request_divider_two"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/seller_shop_email"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/seller_request_address_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seller_request_email_txt_cv"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/shop_address"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/seller_request_phone_no_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seller_request_address_txt_cv"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/seller_shop_phone_one"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/seller_request_divider_three"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/seller_request_phone_no_txt_cv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/DimGray" />
+
+        <TextView
+            android:id="@+id/seller_request_join_date_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seller_request_divider_three"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:text="@string/date"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/seller_request_licence_number_txt_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shop_licence"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/seller_request_divider_three"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/baloo"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

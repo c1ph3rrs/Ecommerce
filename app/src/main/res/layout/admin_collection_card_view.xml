@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/admin_category_layout_border"
+                android:elevation="5dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/admin_collection_card_one_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/new_category" />
+
+                <TextView
+                    android:id="@+id/admin_collection_card_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/admin_collection_card_one_img"
+                    android:fontFamily="@font/muli_black"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="10dp"
+                    android:singleLine="true"
+                    android:text="@string/admin_view_special_offers"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/admin_collection_card_description_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/admin_collection_card_name_txt"
+                    android:fontFamily="@font/muli_light"
+                    android:textAlignment="center"
+                    android:singleLine="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/admin_view_special_offers"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/admin_collection_card_price_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_detail_price"
+                    android:layout_below="@+id/admin_collection_card_description_txt"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/admin_collection_card_price_number_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_detail_price"
+                    android:layout_below="@+id/admin_collection_card_description_txt"
+                    android:layout_toRightOf="@+id/admin_collection_card_price_name_txt"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/admin_collection_card_quantity_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_quantity"
+                    android:layout_below="@+id/admin_collection_card_price_name_txt"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/admin_collection_card_quantity_number_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_quantity"
+                    android:layout_below="@+id/admin_collection_card_price_name_txt"
+                    android:layout_toRightOf="@+id/admin_collection_card_quantity_name_txt"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+
+                <RatingBar
+                    android:id="@+id/admin_collection_product_ratting"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/admin_collection_card_quantity_number_txt"
+                    android:paddingLeft="10dp"
+                    android:layout_centerInParent="true"
+                    android:rating="5" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+
+
+

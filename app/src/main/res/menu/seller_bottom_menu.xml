@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/seller_nav_dashboard"
+        android:title="@string/seller_dashboards"
+        android:icon="@drawable/dashboard_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+    <item android:id="@+id/seller_nav_messages"
+        android:title="@string/seller_messages"
+        android:icon="@drawable/message_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+    <item android:id="@+id/seller_nav_notification"
+        android:title="@string/seller_notification"
+        android:icon="@drawable/notification_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+    <item android:id="@+id/seller_nav_user"
+        android:title="@string/seller_profile"
+        android:icon="@drawable/user_icon"
+        app:cnb_backgroundColor="@color/colorPrimary"/>
+
+</menu>

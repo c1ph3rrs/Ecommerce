@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:elevation="1dp"
+    android:padding="10dp"
+    app:cardCornerRadius="3dp">
+
+    <RelativeLayout
+        android:id="@+id/seller_review_show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <!--                &lt;!&ndash;       Buyer Review         &ndash;&gt;-->
+
+        <RelativeLayout
+            android:id="@+id/seller_review_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/seller_review_txt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/home_background">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/seller_review_show_buyer_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/profile"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/seller_review_show_buyer_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seller_review_txt"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/seller_review_show_buyer_iv"
+                android:fontFamily="@font/baloo"
+                android:textColor="@color/black"
+                android:text="@string/order_buyer_name"
+                android:textSize="14sp"
+                tools:ignore="NotSibling" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/seller_completed_buyer_ratting_bar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/seller_review_show_buyer_name_txt"
+                android:progressTint="@color/golden"
+                android:stepSize="1"
+                android:numStars="1" />
+
+            <TextView
+                android:id="@+id/seller_ratting_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/golden"
+                android:fontFamily="@font/baloo"
+                android:layout_toRightOf="@+id/seller_completed_buyer_ratting_bar"
+                android:text="@string/total_price_number" />
+
+            <TextView
+                android:id="@+id/seller_review_show_buyer_review_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/seller_review_show_buyer_iv"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/buyer_info"
+                android:textAlignment="textStart"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

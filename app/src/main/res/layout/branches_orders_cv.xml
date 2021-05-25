@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:padding="15dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/branch_shipping_from_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shipping_from"
+            android:fontFamily="@font/baloo"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/branch_shipping_to_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shipping_to"
+            android:layout_below="@+id/branch_shipping_from_cv"
+            android:fontFamily="@font/baloo"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp"/>
+
+        <View
+            android:id="@+id/branch_id_divider_one"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@id/branch_shipping_to_cv"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/branch_order_shipping_id_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shipping_id"
+            android:layout_below="@+id/branch_id_divider_one"
+            android:fontFamily="@font/baloo"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/branch_order_tracking_id_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tracking_id"
+            android:fontFamily="@font/baloo"
+            android:layout_below="@+id/branch_order_shipping_id_cv"
+            android:textSize="16sp"/>
+
+        <View
+            android:id="@+id/branch_id_divider_two"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@id/branch_order_tracking_id_cv"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/branch_shipping_date_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_below="@id/branch_id_divider_two"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/baloo"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

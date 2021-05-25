@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Branch.BranchChallanFormActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:background="@color/home_background">
+
+        <ImageView
+            android:id="@+id/branch_challan_form_back_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/insert_challan_picture"
+            android:fontFamily="@font/baloo"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/branch_add_challan_pic_iv"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:src="@drawable/insert_photo"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"/>
+
+
+            <Button
+                android:id="@+id/branch_add_challan_record_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_record"
+                android:layout_below="@+id/branch_add_challan_pic_iv"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/black"/>
+
+    </LinearLayout>
+    
+
+
+</LinearLayout>
