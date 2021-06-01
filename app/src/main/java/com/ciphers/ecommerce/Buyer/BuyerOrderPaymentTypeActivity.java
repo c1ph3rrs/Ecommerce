@@ -81,36 +81,40 @@ public class BuyerOrderPaymentTypeActivity extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(data != null){
+        if (data != null) {
             ResponseCode = data.getStringExtra("pp_ResponseCode");
-        }else{
-            ResponseCode = "none";
+        } else {
+            ResponseCode = "";
         }
 
 
         System.out.println("DateFn: ResponseCode:" + ResponseCode);
-        if(ResponseCode.equals("000")) {
 
-            Toast.makeText(getApplicationContext(), "Payment Success", Toast.LENGTH_SHORT).show();
+        if (ResponseCode.equals(null)) {
 
-            Intent sendDataToCartPlaceOrderIntent = new Intent(getApplicationContext(), CartActivity.class);
-            sendDataToCartPlaceOrderIntent.putExtra("senderName", senderName);
-            sendDataToCartPlaceOrderIntent.putExtra("senderCity", senderCity);
-            sendDataToCartPlaceOrderIntent.putExtra("senderPhone", senderPhone);
-            sendDataToCartPlaceOrderIntent.putExtra("receiverName", receiverName);
-            sendDataToCartPlaceOrderIntent.putExtra("receiverCity", receiverCity);
-            sendDataToCartPlaceOrderIntent.putExtra("receiverPhone", receiverPhone);
-            sendDataToCartPlaceOrderIntent.putExtra("shippingAddress", shippingAddress);
-            sendDataToCartPlaceOrderIntent.putExtra("totalCartItems", totalCartItems);
-            sendDataToCartPlaceOrderIntent.putExtra("paymentType", "Online");
-            startActivity(sendDataToCartPlaceOrderIntent);
+        } else {
+
+            if (ResponseCode.equals("000")) {
+
+                Toast.makeText(getApplicationContext(), "Payment Success", Toast.LENGTH_SHORT).show();
+
+                Intent sendDataToCartPlaceOrderIntent = new Intent(getApplicationContext(), CartActivity.class);
+                sendDataToCartPlaceOrderIntent.putExtra("senderName", senderName);
+                sendDataToCartPlaceOrderIntent.putExtra("senderCity", senderCity);
+                sendDataToCartPlaceOrderIntent.putExtra("senderPhone", senderPhone);
+                sendDataToCartPlaceOrderIntent.putExtra("receiverName", receiverName);
+                sendDataToCartPlaceOrderIntent.putExtra("receiverCity", receiverCity);
+                sendDataToCartPlaceOrderIntent.putExtra("receiverPhone", receiverPhone);
+                sendDataToCartPlaceOrderIntent.putExtra("shippingAddress", shippingAddress);
+                sendDataToCartPlaceOrderIntent.putExtra("totalCartItems", totalCartItems);
+                sendDataToCartPlaceOrderIntent.putExtra("paymentType", "Online");
+                startActivity(sendDataToCartPlaceOrderIntent);
 
 
-
+            } else {
+                Toast.makeText(getApplicationContext(), "Payment Failed", Toast.LENGTH_SHORT).show();
+            }
         }
-        else
-        {
-            Toast.makeText(getApplicationContext(), "Payment Failed", Toast.LENGTH_SHORT).show();
-        }
+
     }
 }

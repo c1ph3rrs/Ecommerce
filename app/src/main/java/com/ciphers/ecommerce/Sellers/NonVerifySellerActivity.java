@@ -12,13 +12,17 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,6 +31,13 @@ import android.widget.Toast;
 import com.ciphers.ecommerce.Prevalent.Prevalent;
 import com.ciphers.ecommerce.R;
 import com.ciphers.ecommerce.SplashScreen;
+import com.firebase.geofire.GeoFire;
+import com.firebase.geofire.GeoLocation;
+import com.firebase.geofire.GeoQuery;
+import com.firebase.geofire.GeoQueryEventListener;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -42,8 +53,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
 import io.paperdb.Paper;
 
@@ -58,7 +72,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
     RelativeLayout shopProfileLayout, shopDocumentLayout, shopIDFrontLayout, shopIDBackLayout, shopVisitingCardLayout, sellerPendingStatusLayout, sellerUsernameLayout;
 
     Button submitSellerDocumentsBtn, sellerLogoutBtn, sellerLogoutTwoBtn;
-    TextView sellerUsernameTxt, sellerShopProfileTV, sellerDocumentTV, sellerIDFrontTV, sellerIDBackTV, sellerVisitingCardTV;
+    TextView sellerUsernameTxt, sellerShopProfileTV, sellerDocumentTV, sellerIDFrontTV, sellerIDBackTV, sellerVisitingCardTV, shopCategoryLbl;
     TextInputLayout sellerShopNameTxt, sellerShopEmailTxt, sellerShopAddressTxt, sellerShopLicenceTxt;
 
     int imageNo = 0;
@@ -74,9 +88,13 @@ public class NonVerifySellerActivity extends AppCompatActivity {
     ArrayList<String> sellerShopTypeList = new ArrayList<>();
 
 
-    DatabaseReference sellerRecordRef, sellersRef, sellerShopCategoryRef;
+    DatabaseReference sellerRecordRef, sellersRef, sellerShopCategoryRef, sellerLoginLocRef;
+    LinearLayout shopCategorySpinnerLayout;
 
     String status;
+    Double lati, longi;
+    int radius = 1;
+    boolean userFound = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +106,8 @@ public class NonVerifySellerActivity extends AppCompatActivity {
         sellersRef = FirebaseDatabase.getInstance().getReference().child("Sellers");
         sellerRecordRef = FirebaseDatabase.getInstance().getReference().child("SellersDocuments");
         sellerShopCategoryRef = FirebaseDatabase.getInstance().getReference().child("ShopCategory");
+        sellerLoginLocRef = FirebaseDatabase.getInstance().getReference().child("Locations")
+                .child("SellersLocations");
 
 
         sellerShopLogo = FirebaseStorage.getInstance().getReference().child("Seller Logo");
@@ -130,6 +150,8 @@ public class NonVerifySellerActivity extends AppCompatActivity {
         sellerVisitingCardTV = findViewById(R.id.seller_visiting_card_tv);
         sellerLogoutBtn = findViewById(R.id.seller_pending_logout_btn);
         sellerLogoutTwoBtn = findViewById(R.id.seller_pending_logout_two_btn);
+        shopCategorySpinnerLayout = findViewById(R.id.shop_category_spinner_layout);
+        shopCategoryLbl = findViewById(R.id.seller_shop_category_layout_lbl);
 
         submitSellerDocumentsBtn = findViewById(R.id.seller_submit_record);
         progressDialog = new ProgressDialog(this);
@@ -162,6 +184,9 @@ public class NonVerifySellerActivity extends AppCompatActivity {
 
             submitSellerDocumentsBtn.setVisibility(View.GONE);
 
+            shopCategorySpinnerLayout.setVisibility(View.GONE);
+            shopCategoryLbl.setVisibility(View.GONE);
+            sellerLogoutTwoBtn.setVisibility(View.GONE);
 
             sellerPendingStatusLayout.setVisibility(View.VISIBLE);
 
@@ -174,6 +199,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
             sellerShopEmailTxt.getEditText().setText(Prevalent.currentOnlineSeller.getSellerShopEmail());
             sellerShopAddressTxt.getEditText().setText(Prevalent.currentOnlineSeller.getSellerShopLocation());
             sellerShopLicenceTxt.getEditText().setText(Prevalent.currentOnlineSeller.getSellerShopIdentity());
+
         }
 
         sellerLogoutBtn.setOnClickListener(new View.OnClickListener() {
@@ -304,6 +330,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
         submitSellerDocumentsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 validateData();
             }
         });
@@ -389,6 +416,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
 
     }
 
+
     private void openGallery() {
         Intent galleryIntent = new Intent();
         galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
@@ -396,7 +424,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
         startActivityForResult(galleryIntent, galleryPic);
     }
 
-    private void showShopCategoryDataSpinner(){
+    private void showShopCategoryDataSpinner() {
         sellerShopCategoryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -408,6 +436,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
                 categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sellerShopSpinner.setAdapter(categoryAdapter);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
@@ -492,7 +521,7 @@ public class NonVerifySellerActivity extends AppCompatActivity {
         } else if (imageUri5.equals(Uri.EMPTY)) {
             Toast.makeText(getApplicationContext(), "Please Enter the Shop Visiting Card", Toast.LENGTH_SHORT).show();
         } else {
-            submitUserData();
+            validateLocation();
         }
     }
 
@@ -733,5 +762,101 @@ public class NonVerifySellerActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    private void validateLocation() {
+
+        fetchShopAdressLocation();
+
+    }
+
+    private void fetchShopAdressLocation() {
+
+        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+        List<Address> addresses = null;
+
+        try {
+            addresses = geocoder.getFromLocationName(sellerShopAddressTxt.getEditText().getText().toString(), 1);
+        } catch (IOException e) {
+
+            addresses = null;
+
+        }
+
+        try {
+
+            if (addresses.size() > 0) {
+                lati = addresses.get(0).getLatitude();
+                longi = addresses.get(0).getLongitude();
+
+                getCloseUserLocation();
+
+//                Toast.makeText(getApplicationContext(), "Lat & lng " + lati + longi, Toast.LENGTH_LONG).show();
+
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Please Enter a valid Address", Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+
+    private void getCloseUserLocation() {
+
+        GeoFire geoFire = new GeoFire(sellerLoginLocRef);
+        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(lati, longi), radius);
+        geoQuery.removeAllListeners();
+
+        geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
+            @Override
+            public void onKeyEntered(String key, GeoLocation location) {
+
+                if (radius <= 2) {
+
+                    userFound = true;
+                    submitUserData();
+//                    Toast.makeText(getApplicationContext(), "User Found", Toast.LENGTH_SHORT).show();
+//                    Log.d("Radius", "Value is " + String.valueOf(radius));
+
+                }
+
+//                if(radius > 2){
+//                    if(!userFound){
+//                        Toast.makeText(getApplicationContext(), "Please Go to your shop then Upload Documents to become a seller", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+
+
+
+            }
+
+            @Override
+            public void onKeyExited(String key) {
+
+            }
+
+            @Override
+            public void onKeyMoved(String key, GeoLocation location) {
+
+            }
+
+            @Override
+            public void onGeoQueryReady() {
+                if (radius <= 2) {
+
+                    radius = radius + 1;
+                    getCloseUserLocation();
+
+                }else {
+
+                }
+            }
+
+            @Override
+            public void onGeoQueryError(DatabaseError error) {
+
+            }
+        });
+
     }
 }

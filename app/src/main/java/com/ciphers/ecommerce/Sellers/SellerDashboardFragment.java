@@ -48,7 +48,7 @@ public class SellerDashboardFragment extends Fragment {
 
     DatabaseReference availableBalanceRef, totalOrdersRef;
 
-    ImageView sellerProfileIV;
+    ImageView sellerProfileIV, searchUserIV;
 
 
     public SellerDashboardFragment() {
@@ -100,11 +100,19 @@ public class SellerDashboardFragment extends Fragment {
         availableBalanceTxt = view.findViewById(R.id.seller_available_balance_txt);
         newOrdersTxt = view.findViewById(R.id.new_orders_number_txt);
         sellerProfileIV = view.findViewById(R.id.seller_profile_iv);
+        searchUserIV = view.findViewById(R.id.search_user_icon);
 
         sellerSpecialOfferBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), SellerSpecialOfferOptions.class));
+            }
+        });
+
+        searchUserIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SellerSearchUserActivity.class));
             }
         });
 

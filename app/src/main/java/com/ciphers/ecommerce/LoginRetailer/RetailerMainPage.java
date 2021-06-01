@@ -134,12 +134,10 @@ public class RetailerMainPage extends FragmentActivity implements OnMapReadyCall
                     if (getApplicationContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                             == PackageManager.PERMISSION_GRANTED) {
 
-
                         Intent retailerMainPageIntent = new Intent(getApplicationContext(), SignUpRetailerPageOne.class);
                         retailerMainPageIntent.putExtra("latitude", latitude);
                         retailerMainPageIntent.putExtra("longitude", longitude);
                         startActivity(retailerMainPageIntent);
-
 
                     } else {
                         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);

@@ -29,6 +29,8 @@ import com.ciphers.ecommerce.Model.Users;
 import com.ciphers.ecommerce.Prevalent.Prevalent;
 import com.ciphers.ecommerce.R;
 import com.ciphers.ecommerce.Sellers.NonVerifySellerActivity;
+import com.firebase.geofire.GeoFire;
+import com.firebase.geofire.GeoLocation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskExecutors;
@@ -59,6 +61,8 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+import io.paperdb.Paper;
+
 public class RetailerOTP extends AppCompatActivity {
 
     PinView signUpOTPCode;
@@ -76,13 +80,15 @@ public class RetailerOTP extends AppCompatActivity {
     private PhoneAuthProvider.ForceResendingToken forceResendingToken;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallBacks;
     String mVerificationId;
-
+    DatabaseReference userLocationRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retailer_o_t_p);
+
+
 
         Intent verifyOTPIntent = getIntent();
         fullName = verifyOTPIntent.getStringExtra("fullName");
@@ -149,6 +155,10 @@ public class RetailerOTP extends AppCompatActivity {
                     dummyNumber.setText(phoneNo);
 //                    addUserData();
                     verifyPhoneNumberWithCode(mVerificationId, code);
+//                    Toast.makeText(getApplicationContext(), "Lat " + lat + " lng " + lng, Toast.LENGTH_LONG).show();
+//                    storeDataIntoDatabase(username);
+
+
 
                 }
             }
@@ -216,7 +226,7 @@ public class RetailerOTP extends AppCompatActivity {
         currentDate = getDate.format(calendar.getTime());
 
         final DatabaseReference rootRef;
-        final DatabaseReference userLocationRef;
+
         rootRef = FirebaseDatabase.getInstance().getReference();
         userLocationRef = FirebaseDatabase.getInstance().getReference();
 
@@ -245,35 +255,34 @@ public class RetailerOTP extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 
-                            HashMap<String, Object> locationMap = new HashMap<>();
-                            locationMap.put("Lat", lat);
-                            locationMap.put("Lng", lng);
-                            locationMap.put("Status", "0");
+                            storeDataIntoDatabase(username);
 
-                            userLocationRef.child("Locations").child("SellersLocations").child(username).updateChildren(locationMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            DatabaseReference tokenRef = FirebaseDatabase.getInstance().getReference().child("SellersTokens");
+                            HashMap<String, Object> tokenMap = new HashMap<>();
+                            tokenMap.put("sellerToken", userToken);
+                            tokenRef.child(username).updateChildren(tokenMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
+                                    loadingDialog.dismiss();
 
-                                    DatabaseReference tokenRef = FirebaseDatabase.getInstance().getReference().child("SellersTokens");
-                                    HashMap<String, Object> tokenMap = new HashMap<>();
-                                    tokenMap.put("sellerToken", userToken);
-                                    tokenRef.child(username).updateChildren(tokenMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            loadingDialog.dismiss();
-                                            Sellers sellerData = new Sellers(password, currentDate, fullName, "null", email, sellerShopIdentity, "null", sellerShopName, phoneNo, sellerShopStatus, username, image);
-                                            Prevalent.currentOnlineSeller = sellerData;
+                                    Sellers sellerData = new Sellers(password, currentDate, fullName, "null", email, sellerShopIdentity, "null", sellerShopName, phoneNo, sellerShopStatus, username, image);
+                                    Prevalent.currentOnlineSeller = sellerData;
 
-                                            Intent otpIntent = new Intent(getApplicationContext(), NonVerifySellerActivity.class);
-                                            otpIntent.putExtra("status", "-1");
-                                            otpIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            startActivity(otpIntent);
-                                            finish();
-                                        }
-                                    });
+                                    Paper.book().write(Prevalent.userUserNameKey, username);
+                                    Paper.book().write(Prevalent.userUserPasswordKey, password);
+                                    Paper.book().write(Prevalent.dBName, userType);
 
+
+
+                                    Intent otpIntent = new Intent(getApplicationContext(), NonVerifySellerActivity.class);
+                                    otpIntent.putExtra("status", "-1");
+                                    otpIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(otpIntent);
+                                    finish();
                                 }
                             });
+
+
                         }
                     });
 
@@ -341,7 +350,7 @@ public class RetailerOTP extends AppCompatActivity {
     private void startPhoneNumberVerification(String phoneNumber) {
 
         new CountDownTimer(60000, 1000) {
-                        @Override
+            @Override
             public void onTick(long l) {
                 resendCode.setText("" + l / 1000);
                 resendCode.setEnabled(false);
@@ -410,6 +419,14 @@ public class RetailerOTP extends AppCompatActivity {
                         .setForceResendingToken(token)     // ForceResendingToken from callbacks
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+
+    private void storeDataIntoDatabase(String usernamee) {
+
+        userLocationRef = FirebaseDatabase.getInstance().getReference().child("Locations").child("SellersLocations");
+        GeoFire geoFire = new GeoFire(userLocationRef);
+        geoFire.setLocation(usernamee, new GeoLocation(Double.parseDouble(lat),Double.parseDouble(lng)));
+
     }
 
 }

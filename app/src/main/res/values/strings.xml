@@ -198,6 +198,7 @@
     <string name="trouble_login">Trouble Logging In?</string>
     <string name="forget_one_description">Enter your username and we\'ll send you a link to get back into your account.</string>
     <string name="send_code">Send Code</string>
+    <string name="search_buyer">Search Buyer</string>
 
 
     <!--  Search Product  -->

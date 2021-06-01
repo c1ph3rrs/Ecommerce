@@ -285,16 +285,19 @@ public class BuyerOrderDetailActivity extends FragmentActivity implements OnMapR
         sellerReviewsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("Review is", "Review : " + snapshot);
-                String dbBuyerName = snapshot.child("buyerName").getValue(String.class);
-                Log.d("buyer Name", "Buyer : " + snapshot.child("buyerName").getValue(String.class));
-                String dbRatting = snapshot.child("ratting").getValue(String.class);
-                String dbBuyerReview = snapshot.child("review").getValue(String.class);
+
+                if (snapshot.exists()) {
+                    Log.d("Review is", "Review : " + snapshot);
+                    String dbBuyerName = snapshot.child("buyerName").getValue(String.class);
+                    Log.d("buyer Name", "Buyer : " + snapshot.child("buyerName").getValue(String.class));
+                    String dbRatting = snapshot.child("ratting").getValue(String.class);
+                    String dbBuyerReview = snapshot.child("review").getValue(String.class);
 //
-                buyerNameTxt.setText(dbBuyerName);
-                buyerReviewDescTxt.setText(dbBuyerReview);
-                buyerPostRatting.setRating(Float.parseFloat(dbRatting));
-                buyerPostRatting.setIsIndicator(true);
+                    buyerNameTxt.setText(dbBuyerName);
+                    buyerReviewDescTxt.setText(dbBuyerReview);
+                    buyerPostRatting.setRating(Float.parseFloat(dbRatting));
+                    buyerPostRatting.setIsIndicator(true);
+                }
 
             }
 
@@ -557,7 +560,7 @@ public class BuyerOrderDetailActivity extends FragmentActivity implements OnMapR
 
     void checkSellerPaymentsRecord(String orderSellerName) {
 
-        int newOrder = 1,  newBalance, newEarning;
+        int newOrder = 1, newBalance, newEarning;
         float newRatting = 1f;
 
         Query queries = analyticsRef.child("Sellers").child(orderSellerName);

@@ -52,7 +52,17 @@
 
             </RelativeLayout>
 
+            <TextView
+                android:id="@+id/seller_shop_category_layout_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seller_shop_category"
+                android:fontFamily="@font/baloo"
+                android:textSize="15sp"/>
+
+
             <LinearLayout
+                android:id="@+id/shop_category_spinner_layout"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/spinner_border"

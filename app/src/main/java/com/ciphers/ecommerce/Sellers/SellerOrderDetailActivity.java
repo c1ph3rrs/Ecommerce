@@ -472,7 +472,7 @@ public class SellerOrderDetailActivity extends FragmentActivity implements OnMap
                         NotificationSender notificationSender = new NotificationSender(dbToken, notificationTitle, Prevalent.currentOnlineSeller.getSellerUsername() + " " + notificationBody,
                                 getApplicationContext(), SellerOrderDetailActivity.this);
                         notificationSender.SendNotifications();
-                        SellerOrderDetailActivity.super.onBackPressed();
+//                        SellerOrderDetailActivity.super.onBackPressed();
                     }
 
                     @Override

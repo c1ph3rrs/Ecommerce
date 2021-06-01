@@ -179,9 +179,9 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
                     public void onClick(DialogInterface dialog, int which) {
                         if (which == 0) {
 
-                            if(paymentType.equals("COD")){
+                            if (paymentType.equals("COD")) {
                                 addPaymentRecordToBranch();
-                            }else{
+                            } else {
                                 changeBuyerOrderStatus();
                             }
 
@@ -317,7 +317,7 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
         shippingRef.child("Shipping").child(shippingID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     String dbReceiverCity = snapshot.child("receiverCity").getValue(String.class);
                     String dbReceiverName = snapshot.child("receiverName").getValue(String.class);
                     String dbReceiverPhone = snapshot.child("receiverPhone").getValue(String.class);
@@ -335,8 +335,8 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
                     deliveryGuyReceiverPhoneTxt.setText("Receiver Phone : " + dbReceiverPhone);
                     deliveryGuyAddressTxt.setText("Shipping Address : " + dbShippingAddress);
 
-                showOrderData(buyerName);
-                }else{
+                    showOrderData(buyerName);
+                } else {
                     Toast.makeText(getApplicationContext(), "Record Not Found", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -350,6 +350,8 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
 
     private void showOrderData(String buyerName) {
 
+//        CCODI-MaeMinp1HT2kiYedKoR
+
         buyerOrderRef.child(buyerName).child(trackingID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -360,6 +362,7 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
                 String dbDeliverOrderPrice = snapshot.child("deliverOrderPrice").getValue(String.class);
                 String dbDeliverOrderQty = snapshot.child("deliverOrderQty").getValue(String.class);
                 String dbDeliverOrderTPrice = snapshot.child("deliverOrderTotalPrice").getValue(String.class);
+
 
                 if (Integer.parseInt(dbDeliverOrderTPrice) <= 100) {
                     shippingCharges = 40;
@@ -392,6 +395,7 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
                 newAmount = Float.parseFloat(dbDeliverOrderTPrice) + Float.parseFloat(String.valueOf(shippingCharges));
                 newAmountTotal = String.valueOf(newAmount);
 
+
                 productTitleTxt.setText(dbDeliverOrderName);
                 productQtyTxt.setText(dbDeliverOrderQty);
                 productPriceTxt.setText(dbDeliverOrderPrice);
@@ -402,8 +406,7 @@ public class DeliveryGuyOrderDetail extends AppCompatActivity implements OnMapRe
 
                 paymentType = dbDeliverOrderPayment;
 
-
-//                buyerName = snapshot.child("buyerName").getValue(String.class);
+//              buyerName = snapshot.child("buyerName").getValue(String.class);
             }
 
             @Override

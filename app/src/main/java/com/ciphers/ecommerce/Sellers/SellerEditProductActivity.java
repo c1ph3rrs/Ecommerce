@@ -94,6 +94,13 @@ public class SellerEditProductActivity extends AppCompatActivity {
 
         loadingDialog = new ProgressDialog(this);
 
+        backIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SellerEditProductActivity.super.onBackPressed();
+            }
+        });
+
         loadSubCategoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

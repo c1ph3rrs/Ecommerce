@@ -122,7 +122,7 @@ public class AdminSellerRequestDetailActivity extends FragmentActivity implement
                         "No"
                 };
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(AdminSellerRequestDetailActivity.this);
                 builder.setTitle("You are going to approve Seller Request. Are You sure you want to Approve Seller.?");
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override
@@ -147,7 +147,7 @@ public class AdminSellerRequestDetailActivity extends FragmentActivity implement
                         "No"
                 };
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                AlertDialog.Builder builder = new AlertDialog.Builder(AdminSellerRequestDetailActivity.this);
                 builder.setTitle("You are requesting Seller To modify Changes. ");
                 builder.setItems(options, new DialogInterface.OnClickListener() {
                     @Override

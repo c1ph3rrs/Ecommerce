@@ -47,6 +47,7 @@ public class JazzCash extends AppCompatActivity {
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
 
         jazzCashBackIcon.setOnClickListener(new View.OnClickListener() {
             @Override

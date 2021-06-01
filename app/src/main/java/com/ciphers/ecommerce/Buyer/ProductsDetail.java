@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ import java.util.HashMap;
 public class ProductsDetail extends AppCompatActivity {
 
     ImageView productDetailCloseBtn;
-    TextView productDetailNameTxt, productDetailDescriptionTxt, productDetailPriceTxt, productSellerTxt, productCategoryTxt;
+    TextView productDetailNameTxt, productDetailDescriptionTxt, productDetailPriceTxt, productSellerTxt, productCategoryTxt, sellerOtherProductsLbl;
     ElegantNumberButton elegantNumberButton;
     FloatingActionButton addToCartButton;
     String productId = "", state = "normal";
@@ -56,6 +57,7 @@ public class ProductsDetail extends AppCompatActivity {
     DatabaseReference cartListRef, orderRef, wishListRef, productsRef;
     FirebaseRecyclerAdapter<Products, ProductViewHolder> productsAdapter;
     RecyclerView.LayoutManager layoutManager;
+    RelativeLayout otherProductsLayout;
 
     CardView sellerViewProfileCardView;
 
@@ -69,7 +71,7 @@ public class ProductsDetail extends AppCompatActivity {
         cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
         orderRef = FirebaseDatabase.getInstance().getReference().child("Orders");
 
-        wishListRef = FirebaseDatabase.getInstance().getReference().child("WishList").child(Prevalent.currentOnlineUser.getUsername());
+        wishListRef = FirebaseDatabase.getInstance().getReference().child("WishList");
         productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
         productId = getIntent().getStringExtra("pID");
@@ -90,6 +92,8 @@ public class ProductsDetail extends AppCompatActivity {
         productCategoryTxt = findViewById(R.id.product_category_txt);
         sellerViewProfileCardView = findViewById(R.id.seller_view_profile_card_view);
         productDetailRecycler = findViewById(R.id.product_detail_recycler);
+        sellerOtherProductsLbl = findViewById(R.id.seller_other_products_lbl);
+        otherProductsLayout = findViewById(R.id.seller_products_detail_layout);
 
         productDetailCloseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +158,12 @@ public class ProductsDetail extends AppCompatActivity {
         if (activityType.equals("Seller")) {
             elegantNumberButton.setVisibility(View.GONE);
             addToCartButton.setVisibility(View.GONE);
+            sellerViewProfileCardView.setVisibility(View.GONE);
+            sellerOtherProductsLbl.setVisibility(View.GONE);
+            productDetailRecycler.setVisibility(View.GONE);
+            otherProductsLayout.setVisibility(View.GONE);
+
+
         } else if (activityType.equals("Buyer")) {
             elegantNumberButton.setVisibility(View.VISIBLE);
             addToCartButton.setVisibility(View.VISIBLE);
@@ -286,54 +296,57 @@ public class ProductsDetail extends AppCompatActivity {
                 productViewHolder.itemProductPriceTV.setText(products.getProductPrice() + " pkr");
                 Picasso.get().load(products.getProductImage1()).placeholder(R.drawable.cart_logo).into(productViewHolder.itemImageView);
 
-                wishListRef.child(products.getProductId()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if (snapshot.exists()) {
-                            productViewHolder.likeBtn.setLiked(true);
+                if (activityType.equals("Buyer")) {
+                    wishListRef.child(Prevalent.currentOnlineUser.getUsername()).child(products.getProductId()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                productViewHolder.likeBtn.setLiked(true);
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+                        }
+                    });
 
-                productViewHolder.likeBtn.setOnLikeListener(new OnLikeListener() {
-                    @Override
-                    public void liked(LikeButton likeButton) {
+                    productViewHolder.likeBtn.setOnLikeListener(new OnLikeListener() {
+                        @Override
+                        public void liked(LikeButton likeButton) {
 
-                        HashMap<String, Object> wishListMap = new HashMap<>();
-                        wishListMap.put("productID", products.getProductId());
-                        wishListMap.put("productTitle", products.getProductName());
+                            HashMap<String, Object> wishListMap = new HashMap<>();
+                            wishListMap.put("productID", products.getProductId());
+                            wishListMap.put("productTitle", products.getProductName());
 
-                        wishListRef.child(products.getProductId()).updateChildren(wishListMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                Toast.makeText(getApplicationContext(), "Product Added to Wish list", Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
+                            wishListRef.child(Prevalent.currentOnlineUser.getUsername()).child(products.getProductId()).updateChildren(wishListMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Toast.makeText(getApplicationContext(), "Product Added to Wish list", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
 
-                    @Override
-                    public void unLiked(LikeButton likeButton) {
+                        @Override
+                        public void unLiked(LikeButton likeButton) {
 
-                        wishListRef.child(products.getProductId()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                Toast.makeText(getApplicationContext(), "Product Removed from Wish list", Toast.LENGTH_LONG).show();
-                            }
-                        });
-                    }
-                });
+                            wishListRef.child(Prevalent.currentOnlineUser.getUsername()).child(products.getProductId()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Toast.makeText(getApplicationContext(), "Product Removed from Wish list", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                    });
+                }
+
 
                 productViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent productIntent = new Intent(getApplicationContext(), ProductsDetail.class);
                         productIntent.putExtra("pID", products.getProductId());
-                        productIntent.putExtra("activityType", "Buyer");
+                        productIntent.putExtra("activityType", activityType);
                         startActivity(productIntent);
                     }
                 });
